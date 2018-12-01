@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:c="http://www.springframework.org/schema/c"
+xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd"
+ >
+ 
+ 
+ <bean class="com.app.emp.Course" name="cObj" p:CourseFee="343"/>
+ 
+ <bean class="com.app.emp.Student" name="sObj" p:stdId="232" 
+ p:stdCourse="JAVA" >
+ 
+ <lookup-method name="getNewChild" bean="cObj"/>
+ </bean>
+ 
+<!--  <bean class="com.app.emp.Student" name="sObj" c:stdId-ref="232" 
+ c:stdCourse-ref="JAVA" c:stdName-ref="MURARI" scope="prototype"/>
+  -->
+ 
+ </beans>

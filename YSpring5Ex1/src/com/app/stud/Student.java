@@ -1,5 +1,7 @@
 package com.app.stud;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Student {
 	private int StudId;
 	private String StudName;
@@ -7,12 +9,14 @@ public class Student {
 	public int getStudId() {
 		return StudId;
 	}
+	@Required
 	public void setStudId(int studId) {
 		StudId = studId;
 	}
 	public String getStudName() {
 		return StudName;
 	}
+	@Required
 	public void setStudName(String studName) {
 		StudName = studName;
 	}
