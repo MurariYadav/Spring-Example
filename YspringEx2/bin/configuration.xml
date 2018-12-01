@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <bean class="com.app.user.User" name="uObj" p:UserId="1123">
+ <property name="UserName" value="Murari"/>
+ <property name="UserLoc">
+ <value>HYD</value>
+ </property>
+ </bean>
+ <bean class="com.app.admin.Admin" name="aObj" p:AdminId="9877"> 
+ <!-- p:userDtls-ref="uObj" --><!-- ref as p-schema -->
+ <property name="AdminName" value="YADAV"/>
+ <property name="AdminLoc">
+ <value>BIHAR</value>
+ </property>
+ 
+ <property name="UserDtls">
+ <bean class="com.app.user.User"></bean>
+ 
+ </property>
+ <!--ref as tag  -->
+ <!-- <property name="UserDtls">
+ <ref bean="uObj"/>
+ </property> -->
+ <!--  ref as attribute -->
+<!--  <property name="UserDtls" ref="uObj"></property>
+ -->
+ 
+  </bean>
+ </beans>
